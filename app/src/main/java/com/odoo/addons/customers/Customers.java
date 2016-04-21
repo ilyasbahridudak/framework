@@ -1,20 +1,20 @@
 /**
  * Odoo, Open Source Management Solution
  * Copyright (C) 2012-today Odoo SA (<http:www.odoo.com>)
- *
+ * <p/>
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version
- *
+ * <p/>
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details
- *
+ * <p/>
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http:www.gnu.org/licenses/>
- *
+ * <p/>
  * Created on 30/12/14 3:28 PM
  */
 package com.odoo.addons.customers;
@@ -96,6 +96,40 @@ public class Customers extends BaseFragment implements ISyncStatusObserverListen
         mPartnersList.setOnItemClickListener(this);
         setHasFloatingButton(view, R.id.fabButton, mPartnersList, this);
         getLoaderManager().initLoader(0, null, this);
+
+//        OValues values = new OValues();
+//        values.put("name", "Odoo Mobile");
+//        values.put("email", "contact@odoomobile.com");
+//        values.put("is_company", true);
+//
+//
+//        OValues dpr = new OValues();
+//        dpr.put("name", "Dharmang Soni");
+//        dpr.put("email", "dpr@odoomobile.com");
+//
+//
+//        OValues pga = new OValues();
+//        pga.put("name", "Parth Gajjar");
+//        pga.put("email", "pga@odoomobile.com");
+//
+//        OValues ptr = new OValues();
+//        ptr.put("name", "Pariket Trivedi");
+//        ptr.put("email", "ptr@odoomobile.com");
+//
+//        Toast.makeText(getActivity(), "Working", Toast.LENGTH_SHORT).show();
+//        values.put("child_ids", new RelValues().replace(ptr));
+////        OValues tag_1 = new OValues();
+////        tag_1.put("name", "Odoo IN");
+////
+////        values.put("category_id", new RelValues().append(tag_1));
+//
+//        ODataRow row = db().browse(null, "email = ?", new String[]{"contact@odoomobile.com"});
+//        if (row != null) {
+//            db().update(row.getInt(OColumn.ROW_ID), values);
+//        } else {
+//            db().insert(values);
+//        }
+
     }
 
     @Override

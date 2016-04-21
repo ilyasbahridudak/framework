@@ -406,7 +406,7 @@ public class OSyncAdapter extends AbstractThreadedSyncAdapter {
                 case ManyToOne:
                     if (!row.getString(column.getName()).equals("false")) {
                         ODataRow m2oRec = row.getM2ORecord(column.getName()).browse();
-                        if (m2oRec.getInt("id") == 0) {
+                        if (m2oRec != null && m2oRec.getInt("id") == 0) {
                             int new_id = relModel.getServerDataHelper().createOnServer(
                                     OdooRecordUtils.createRecordValues(relModel, m2oRec));
                             updateRecordServerId(relModel, m2oRec.getInt(OColumn.ROW_ID), new_id);
@@ -426,7 +426,7 @@ public class OSyncAdapter extends AbstractThreadedSyncAdapter {
                     }
                     break;
                 case OneToMany:
-                    List<ODataRow> o2mRecs = row.getM2MRecord(column.getName()).browseEach();
+                    List<ODataRow> o2mRecs = row.getO2MRecord(column.getName()).browseEach();
                     if (!o2mRecs.isEmpty()) {
                         for (ODataRow o2mRec : o2mRecs) {
                             if (o2mRec.getInt("id") == 0) {
